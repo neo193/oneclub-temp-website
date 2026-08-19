@@ -1,0 +1,264 @@
+/* ONE CLUB — Temporary Coming Soon Site
+   Replace assets/logo.png with the final business logo.
+*/
+
+:root {
+  --bg: #0b0a08;
+  --bg-soft: #12100d;
+  --text: #f3eee5;
+  --muted: #aaa298;
+  --line: rgba(243, 238, 229, 0.18);
+  --accent: #c7b28b;
+  --max-width: 1240px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.page-shell {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 5vw 28px;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(116, 94, 60, 0.16), transparent 34%),
+    radial-gradient(circle at 12% 100%, rgba(100, 78, 49, 0.12), transparent 30%),
+    linear-gradient(135deg, #080807 0%, #0e0c09 48%, #090806 100%);
+}
+
+/* Very subtle atmospheric shapes — no background image is used. */
+.ambient {
+  position: absolute;
+  z-index: -1;
+  width: 48vw;
+  height: 48vw;
+  max-width: 720px;
+  max-height: 720px;
+  border: 1px solid rgba(199, 178, 139, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ambient-one {
+  top: -28vw;
+  right: -12vw;
+}
+
+.ambient-two {
+  bottom: -34vw;
+  left: -16vw;
+  opacity: 0.55;
+}
+
+.site-header,
+.site-footer {
+  width: min(100%, var(--max-width));
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  width: 150px;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 52px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.header-line {
+  width: 1px;
+  height: 20px;
+  background: var(--line);
+}
+
+.header-status {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+}
+
+.hero {
+  width: min(760px, 100%);
+  margin: auto;
+  padding: 72px 0 82px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 28px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+}
+
+.eyebrow span {
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+}
+
+h1 {
+  margin: 0;
+  max-width: 760px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(4.2rem, 9vw, 8rem);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+}
+
+h1 em {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.intro {
+  max-width: 510px;
+  margin: 38px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 180px;
+  margin: 42px 0 18px;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.divider i {
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--accent);
+  transform: rotate(45deg);
+}
+
+.coming-soon {
+  margin: 0;
+  color: var(--text);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: rgba(243, 238, 229, 0.42);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.footer-dot {
+  color: var(--accent);
+}
+
+@media (max-width: 700px) {
+  .page-shell {
+    padding: 25px 25px 22px;
+  }
+
+  .site-header {
+    gap: 13px;
+  }
+
+  .brand {
+    width: 120px;
+  }
+
+  .header-status {
+    font-size: 8px;
+    letter-spacing: 0.16em;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+
+  h1 {
+    font-size: clamp(3.8rem, 18vw, 6rem);
+    line-height: 0.86;
+  }
+
+  .intro {
+    margin-top: 30px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .site-footer {
+    font-size: 8px;
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero {
+    animation: reveal 900ms ease-out both;
+  }
+
+  .site-header {
+    animation: reveal 700ms ease-out both;
+  }
+
+  .site-footer {
+    animation: reveal 1100ms ease-out both;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
